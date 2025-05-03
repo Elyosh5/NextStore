@@ -53,6 +53,8 @@ const Categories: React.FC = () => {
           />
           <p className="category-item-name">Accessories</p>
           <p className="category-item-number">1 products</p>
+          errores
+          
         </div>
       </div>
     </section>
