@@ -1,12 +1,65 @@
 .Header {
+  background: #0f172a;
+  width: 100%;
+  color: white;
+
   .content {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+
+    #logo {
+      color: rgb(14 165 233);
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      a {
+        color: white;
+      }
+    }
     .actions {
       display: flex;
       align-items: center;
+      gap: 20px;
+    }
+    .menuIcon {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .Header {
+    .content {
+      .top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 10px;
+
+      justify-content: baseline;
+      nav {
+        display: flex;
+        flex-direction: column;
+      }
+      .actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+      }
+      .menuIcon {
+        display: initial;
+      }
     }
   }
 }

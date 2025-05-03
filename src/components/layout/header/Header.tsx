@@ -2,6 +2,8 @@
 import SearchIcon from "@mui/icons-material/Search";
 import scss from "./Header.module.scss";
 import { alpha, InputBase, styled } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -13,23 +15,16 @@ const Search = styled("div")(({ theme }) => ({
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
+  [theme.breakpoints.up("sm")]: {},
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(0)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
   },
 }));
 const Header = () => {
@@ -37,7 +32,11 @@ const Header = () => {
     <div className={scss.Header}>
       <div className="container">
         <div className={scss.content}>
-          <h1 id={scss.logo}>TechStore</h1>
+          <div className={scss.top}>
+            <h1 id={scss.logo}>TechStore</h1>
+            <MenuIcon className={scss.menuIcon} />
+          </div>
+
           <nav>
             <a href="">Home</a>
             <a href="">Catalog</a>
@@ -46,10 +45,12 @@ const Header = () => {
             <Search>
               <StyledInputBase
                 placeholder="Search products..."
+                className={scss.search}
                 inputProps={{ "aria-label": "search" }}
               />
             </Search>
             <SearchIcon />
+            <ShoppingCartOutlinedIcon />
           </div>
         </div>
       </div>
